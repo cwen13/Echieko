@@ -1,5 +1,22 @@
 
 
+
+#roles {
+  list-style-type: none;
+  margin: 0;
+  width: 35rem;
+  padding:0rem 6rem
+}
+
+#title-card {
+  width: 30rem;
+}
+
+#title-card secction {
+  width: 25rem;
+}
+
 #headline {
   background: center url("./../images/filmStrip.png");
+  background-position-y: 88%;
 }
