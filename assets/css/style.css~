@@ -1,0 +1,5 @@
+
+
+.headline {
+  background: url(./../images/filmStrip.png);
+}

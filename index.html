@@ -9,12 +9,13 @@
     <!--  <link rel="stylesheet" href="/css/style.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css"/>
   </head>
   
   <body class="text-danger bg-black">
     <div class="d-flex flex-column justify-space-around align-items-center">
       <main class="container mt-5 text-center">
-	<section class="d-flex flex-row justify-content-evenly">
+	<section id="headline" class="d-flex flex-row justify-content-evenly">
 	  <img class="fit-picure p-4"
 	       src="./assets/images/Echieko.JPG"
 	       alt="black and white picture of Echieko Tamu"
@@ -26,9 +27,9 @@
 	    <h1> Echieko Tamu </h1>
 	    </section>
 	    <section id="production" class="w-30">
-	      <h2 class="text-warning">Mightnght Rambleings Productionn</h2>
+	      <h2 class="text-warning">Mightnght Rambleings Productions</h2>
 	    </section>
-	    <ul id="roles" class="fs-3" style="list-style-type: none; margin: 0; width: 20; padding: 5;">
+	    <ul id="roles" class="fs-3 px-5" style="list-style-type: none; margin: 0; width: 20; padding: 5;">
 	      <li class="text-end">Director</li>
 	      <li class="text-start">Producer</li>
 	      <li class="text-end">Filmaker</li>
@@ -38,7 +39,7 @@
 	    </ul>
 	  </section>
 	</section>
-	<section class="container bg-warning p-3 rounded text-black">
+	<section class="container bg-light p-3 rounded text-black">
 	  <section class="tabs d-flex align-items-start">
 	    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 	      <button class="nav-link active" id="v-pills-awards-tab" data-bs-toggle="pill" data-bs-target="#v-pills-awards" type="button" role="tab" aria-controls="v-pills-awards" aria-selected="true">Awards</button>
@@ -52,7 +53,7 @@
 	    </div>
 	    <div class="tab-content" id="v-pills-tabContent">
 	      <div class="tab-pane fade show active" id="v-pills-awards" role="tabpanel" aria-labelledby="v-pills-awards-tab" tabindex="0">
-		<section class="card mb-3" >
+		<section class="card mb-3 bg-danger">
 		  <div class="row g-0">
 		    <div class="col-md-4">
 		      <img src="./assets/images/HeyRegina.JPG"
@@ -69,8 +70,8 @@
 		      </div>
 		    </div>
 		  </div>
-		  </section>
-				<section class="card mb-3" >
+		</section>
+		<section class="card mb-3 bg-danger">
 		  <div class="row g-0">
 		    <div class="col-md-4">
 		      <img src="./assets/images/HeyRegina.JPG"
@@ -87,26 +88,26 @@
 		      </div>
 		    </div>
 		  </div>
-		  </section>
-
-		</div>
-		<div class="tab-pane fade" id="v-pills-director" role="tabpanel" aria-labelledby="v-pills-director-tab" tabindex="0">sddfbfg</div>
+		</section>
 		
-		<div class="tab-pane fade" id="v-pills-first-ad" role="tabpanel" aria-labelledby="v-pills-first-ad-tab" tabindex="0">bfgbfg</div>
-		<div class="tab-pane fade" id="v-pills-set-design" role="tabpanel" aria-labelledby="v-pills-set-design-tab" tabindex="0">yhtyy</div>
-		<div class="tab-pane fade" id="v-pills-producer" role="tabpanel" aria-labelledby="v-pills-producer-tab" tabindex="0">here we go</div>
-		<div class="tab-pane fade" id="v-pills-screenwriter" role="tabpanel" aria-labelledby="v-pills-screenwriter-tab" tabindex="0">Screenwriter</div>
-		<div class="tab-pane fade" id="v-pills-work-with" role="tabpanel" aria-labelledby="v-pills-work-with-tab" tabindex="0">work with</div>
 	      </div>
+	      <div class="tab-pane fade" id="v-pills-director" role="tabpanel" aria-labelledby="v-pills-director-tab" tabindex="0">sddfbfg</div>
 	      
-	    </section>
-	  </section>
-	  <footer>
+	      <div class="tab-pane fade" id="v-pills-first-ad" role="tabpanel" aria-labelledby="v-pills-first-ad-tab" tabindex="0">bfgbfg</div>
+	      <div class="tab-pane fade" id="v-pills-set-design" role="tabpanel" aria-labelledby="v-pills-set-design-tab" tabindex="0">yhtyy</div>
+	      <div class="tab-pane fade" id="v-pills-producer" role="tabpanel" aria-labelledby="v-pills-producer-tab" tabindex="0">here we go</div>
+	      <div class="tab-pane fade" id="v-pills-screenwriter" role="tabpanel" aria-labelledby="v-pills-screenwriter-tab" tabindex="0">Screenwriter</div>
+	      <div class="tab-pane fade" id="v-pills-work-with" role="tabpanel" aria-labelledby="v-pills-work-with-tab" tabindex="0">work with</div>
+	    </div>
 	    
-	  </footer>
-	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-	</main>
-      </div>
-    </body>
-  </html>
-  
+	  </section>
+	</section>
+	<footer>
+	  
+	</footer>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+      </main>
+    </div>
+  </body>
+</html>
+
