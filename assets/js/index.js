@@ -8,26 +8,71 @@ let movieData = [
     "role": {
       "first-ad": true,
       "director": false,
-      "screenwriter": true
-    },
-    "awards":
-    {
-      "best-pic": false,
-      "best-sfx": false,
-      "best-sound": false,
-      "honorable": true
+      "screenwriter": true,
+      "awards":
+      {
+	"best-pic": false,
+	"best-sfx": false,
+	"best-sound": false,
+	"honorable": true
+      }
     }
   }
 ];
-
-let populate = (category) => {
-  for(let i=0; i<movie.length; i++) {
-    let roles = movieData[i]["roles"];
-    if(roles[category]) {
-      
-  }
-
   
+let populate = (category) => {
+  let cards = [];
+  for(let i=0; i<movieData.length; i++) {
+    if(movieData[i]["role"][category]) {
+      let card = document.createElement("section");
+      card.setAttribute("class","card mb-3 bg-danger");
+
+      let divG = document.createElement("div");
+      divG.setAttribute("class", "row g-0");
+
+      let divCol4 = document.createElement("div");
+      divCol4.setAttribute("class","col-md-4");
+
+      let poster = document.createElement("img");
+      poster.setAttribute("src","./assets/images/HeyRegina.JPG");
+      poster.setAttribute("alt","image split in half with a woman smiling in the top section and a woamn wiht glowing eyes on the bottom");
+      poster.setAttribute("class","img-fluid rounded-start m-3 rounded");
+      poster.setAttribute("height","250");
+      poster.setAttribute("width","250");
+
+      let divCol8 = document.createElement("div");
+      divCol8.setAttribute("class","col-md-8");
+
+      let divCardBody = document.createElement("div");
+      divCardBody.setAttribute("class", "card-body continer-fluid");
+      
+
+      let title = document.createElement("h5");
+      title.setAttribute("class", "card-title");
+      title.innerHTML = movieData[i]["title"];
+      
+      let desc = document.createElement("p");
+      desc.setAttribute("class","card-text");
+      desc.innerHTML = movieData[i]["description"];
+
+      //image column
+      divCol4.append(poster);
+
+      //text column
+      divCardBody.append(title);
+      divCardBody.append(desc);
+      divCol8.append(divCardBody);
+      
+
+      // merging columns
+      divG.append(divCol4);
+      divG.append(divCol8);
+      card.append(divG);
+
+      cards.push(card);
+    }
+  }
+  return cards;
 }
 
 let buildAwards = (awards) => {
@@ -45,21 +90,14 @@ function main() {
   console.log(cats);
   // cycle through them
   for (let i=0; i<cats.length; i++) {
-    let tab = document.querySelector("#v-pills-"+cats[i]);
-  
-    // if there are awards
-    let card = populate(cats[i]);
-    if (card) tab.append(card);
-
-      
+    let tab = document.querySelector("#v-pills-"+cats);
+    // build card
+    let cards = populate(cats[i]);
+    cards.forEach((card) =>tab.append(card));
     
-    // build and plug in
-
-
   }
     
-  
-  
+  return 0;
 }
 
 main();
