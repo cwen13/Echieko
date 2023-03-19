@@ -6,15 +6,21 @@ let movieData = [
     "img": "HeyRegina.JPG",
     "alt-txt": "image split in half with a woman smiling in the top section and a woamn wiht glowing eyes on the bottom",
     "role": {
-      "first-ad": true,
-      "director": false,
-      "screenwriter": true,
+      "director": true,
+      "first-ad": false,
+      "set-design": false,
+      "producer": false,
+      "screenwriter": false,
+      "work-with":
+      {
+	"company": null
+      },
       "awards":
       {
 	"best-pic": false,
 	"best-sfx": false,
 	"best-sound": false,
-	"honorable": true
+	"honorable": false
       }
     }
   }
@@ -23,7 +29,8 @@ let movieData = [
 let populate = (category) => {
   let cards = [];
   for(let i=0; i<movieData.length; i++) {
-    if(movieData[i]["role"][category]) {
+    let film = movieData[i];
+    if(film["role"][category]) {
       let card = document.createElement("section");
       card.setAttribute("class","card mb-3 bg-danger");
 
@@ -34,8 +41,8 @@ let populate = (category) => {
       divCol4.setAttribute("class","col-md-4");
 
       let poster = document.createElement("img");
-      poster.setAttribute("src","./assets/images/HeyRegina.JPG");
-      poster.setAttribute("alt","image split in half with a woman smiling in the top section and a woamn wiht glowing eyes on the bottom");
+      poster.setAttribute("src","./assets/images/"+film["img"]);
+      poster.setAttribute("alt",film["alt-txt"]);
       poster.setAttribute("class","img-fluid rounded-start m-3 rounded");
       poster.setAttribute("height","250");
       poster.setAttribute("width","250");
@@ -49,11 +56,11 @@ let populate = (category) => {
 
       let title = document.createElement("h5");
       title.setAttribute("class", "card-title");
-      title.innerHTML = movieData[i]["title"];
+      title.innerHTML = film["title"];
       
       let desc = document.createElement("p");
       desc.setAttribute("class","card-text");
-      desc.innerHTML = movieData[i]["description"];
+      desc.innerHTML = film["description"];
 
       //image column
       divCol4.append(poster);
@@ -90,7 +97,7 @@ function main() {
   console.log(cats);
   // cycle through them
   for (let i=0; i<cats.length; i++) {
-    let tab = document.querySelector("#v-pills-"+cats);
+    let tab = document.querySelector("#v-pills-"+cats[i]);
     // build card
     let cards = populate(cats[i]);
     cards.forEach((card) =>tab.append(card));
