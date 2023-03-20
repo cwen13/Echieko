@@ -5,16 +5,15 @@ let movieData = [
     "description": "MOvie descirpiton movie description moceisdkhgnlskfugndlkhgblkdjhbnlkfdgbhnldfkjgbhlkdfunhdufuhndlfkuhnbdlfuhbdlkfhnjbdlfkhnbldkfhx",
     "img": "HeyRegina.JPG",
     "alt-txt": "image split in half with a woman smiling in the top section and a woamn wiht glowing eyes on the bottom",
+    "production":"White Midnight",
     "role": {
       "director": true,
       "first-ad": false,
       "set-design": false,
       "producer": false,
       "screenwriter": false,
-      "work-with":
     },
-    "awards":
-    [
+    "awards":[
       "Honorable-Mention - Another Internaitonal Film"
     ]
   }
@@ -61,12 +60,29 @@ let populate = (category) => {
       desc.setAttribute("class","card-text");
       desc.innerHTML = film["description"];
 
+      let production = document.createElement("p");
+      production.setAttribute("class","card-text");
+      production.innerHTML = "Production: "+film["production"];
+
+      if (film["awards"].length > 0) {
+	var awards = document.createElement("ul");
+	awards.setAttribute("id", "awards");
+	for (const award of film["awards"]) {
+	  let awardEle = document.createElement("li")
+	  awardEle.innerHTML ='<i class="bi bi-trophy-fill"></i> ' + award;
+	  awards.append(awardEle);
+	}
+      }
+      
+      
       //image column
       divCol4.append(poster);
 
       //text column
       divCardBody.append(title);
       divCardBody.append(desc);
+      divCardBody.append(production);
+      if (awards) divCardBody.append(awards);
       divCol8.append(divCardBody);
       
 
@@ -77,6 +93,8 @@ let populate = (category) => {
       card.append(divG);
 
       cards.push(card);
+    } else {
+      continue;
     }
   }
   return cards;
