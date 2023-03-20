@@ -1,4 +1,3 @@
-
 let movieData = [
   {
     "title": "Hello Regina",
@@ -7,14 +6,118 @@ let movieData = [
     "alt-txt": "image split in half with a woman smiling in the top section and a woamn wiht glowing eyes on the bottom",
     "production":"White Midnight",
     "role": {
-      "director": true,
-      "first-ad": false,
+      "director": false,
+      "ad": true,
       "set-design": false,
       "producer": false,
       "screenwriter": false,
+      "cinematographer": false
     },
     "awards":[
-      "Honorable-Mention - Another Internaitonal Film"
+      "Honorable-Mention - Another Internaitonal Film",
+      "NBest original Score - Symbiotic Film Festival"
+    ]
+  },
+  {    
+    "title": "Mad Mad World",
+    "description": "",
+    "img": "",
+    "alt-txt": "Man backlit with a pistol in one hand and a moltov cocktail in the other.",
+    "production":"Midnight Ramblings",
+    "role": {
+      "director": true,
+      "ad": false,
+      "set-design": false,
+      "producer": false,
+      "screenwriter": false,
+      "cinematographer": false
+    },
+    "awards":[
+    ]
+  },
+  {    
+    "title": "Chains of Redemtion",
+    "description": "",
+    "img": "",
+    "alt-txt": "",
+    "production":"",
+    "role": {
+      "director": false,
+      "ad": true,
+      "set-design": false,
+      "producer": false,
+      "screenwriter": false,
+      "cinematographer": false
+    },
+    "awards":[
+    ]
+  },
+  {    
+    "title": "Recognition",
+    "description": "",
+    "img": "",
+    "alt-txt": "",
+    "production":"",
+    "role": {
+      "director": true,
+      "ad": false,
+      "set-design": false,
+      "producer": false,
+      "screenwriter": false,
+      "cinematographer": true
+    },
+    "awards":[
+    ]
+  },
+  {    
+    "title": "Spark & Flame",
+    "description": "",
+    "img": "",
+    "alt-txt": "",
+    "production":"",
+    "role": {
+      "director": false,
+      "ad": true,
+      "set-design": false,
+      "producer": false,
+      "screenwriter": false,
+      "cinematographer": false
+    },
+    "awards":[
+    ]
+  },
+  {    
+    "title": "",
+    "description": "",
+    "img": "",
+    "alt-txt": "",
+    "production":"",
+    "role": {
+      "director": true,
+      "ad": false,
+      "set-design": false,
+      "producer": false,
+      "screenwriter": false,
+      "cinematographer": false
+    },
+    "awards":[
+    ]
+  },
+  {    
+    "title": "",
+    "description": "",
+    "img": "",
+    "alt-txt": "",
+    "production":"",
+    "role": {
+      "director": true,
+      "ad": false,
+      "set-design": false,
+      "producer": false,
+      "screenwriter": false,
+      "cinematographer": false
+    },
+    "awards":[
     ]
   }
 ];
@@ -97,6 +200,7 @@ let populate = (category) => {
       continue;
     }
   }
+  console.log(cards);
   return cards;
 }
 
@@ -113,13 +217,13 @@ function main() {
   let cats = [];
   categories.forEach((cat) => cats.push(cat.innerText.trim().toLowerCase()));
   console.log(cats);
-  // cycle through them
+  // cycle through categories
   for (let i=0; i<cats.length; i++) {
+    console.log(cats[i]);
     let tab = document.querySelector("#v-pills-"+cats[i]);
     // build card
     let cards = populate(cats[i]);
     cards.forEach((card) =>tab.append(card));
-    
   }
     
   return 0;
