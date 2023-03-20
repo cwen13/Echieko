@@ -12,25 +12,24 @@ let movieData = [
       "producer": false,
       "screenwriter": false,
       "work-with":
-      {
-	"company": null
-      },
-      "awards":
-      {
-	"best-pic": false,
-	"best-sfx": false,
-	"best-sound": false,
-	"honorable": false
-      }
-    }
+    },
+    "awards":
+    [
+      "Honorable-Mention - Another Internaitonal Film"
+    ]
   }
 ];
-  
+
+
+
+
 let populate = (category) => {
   let cards = [];
   for(let i=0; i<movieData.length; i++) {
     let film = movieData[i];
+    let awardsList = document.createElement("ul");
     if(film["role"][category]) {
+      
       let card = document.createElement("section");
       card.setAttribute("class","card mb-3 bg-danger");
 
@@ -74,6 +73,7 @@ let populate = (category) => {
       // merging columns
       divG.append(divCol4);
       divG.append(divCol8);
+      if (awardsList) divG.append(awardsList);
       card.append(divG);
 
       cards.push(card);
