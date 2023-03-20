@@ -87,7 +87,24 @@ let movieData = [
     ]
   },
   {    
-    "title": "",
+    "title": "If Wishes Were Fishes",
+    "description": "",
+    "img": "",
+    "alt-txt": "",
+    "production":"",
+    "role": {
+      "director": false,
+      "ad": true,
+      "set-design": false,
+      "producer": false,
+      "screenwriter": false,
+      "cinematographer": false
+    },
+    "awards":[
+    ]
+  },
+  {    
+    "title": "O'Holes",
     "description": "",
     "img": "",
     "alt-txt": "",
@@ -104,7 +121,7 @@ let movieData = [
     ]
   },
   {    
-    "title": "",
+    "title": "Seeing Is Believing",
     "description": "",
     "img": "",
     "alt-txt": "",
@@ -112,6 +129,74 @@ let movieData = [
     "role": {
       "director": true,
       "ad": false,
+      "set-design": false,
+      "producer": false,
+      "screenwriter": false,
+      "cinematographer": false
+    },
+    "awards":[
+    ]
+  },
+  {    
+    "title": "Moan & Groan",
+    "description": "",
+    "img": "",
+    "alt-txt": "",
+    "production":"",
+    "role": {
+      "director": true,
+      "ad": false,
+      "set-design": false,
+      "producer": false,
+      "screenwriter": false,
+      "cinematographer": false
+    },
+    "awards":[
+    ]
+  },
+  {    
+    "title": "The Gibbering",
+    "description": "",
+    "img": "",
+    "alt-txt": "",
+    "production":"Midnight Rambelings, Jake Cole Films, and Scott Brosius",
+    "role": {
+      "director": true,
+      "ad": false,
+      "set-design": false,
+      "producer": false,
+      "screenwriter": true,
+      "cinematographer": false
+    },
+    "awards":[
+    ]
+  },
+  {    
+    "title": "Hellow Night Owls",
+    "description": "",
+    "img": "",
+    "alt-txt": "",
+    "production":"Jake Cole Films",
+    "role": {
+      "director": false,
+      "ad": true,
+      "set-design": false,
+      "producer": false,
+      "screenwriter": false,
+      "cinematographer": false
+    },
+    "awards":[
+    ]
+  },
+  {    
+    "title": "Chains of Burden",
+    "description": "",
+    "img": "",
+    "alt-txt": "",
+    "production":"White Midnihght Films",
+    "role": {
+      "director": false,
+      "ad": true,
       "set-design": false,
       "producer": false,
       "screenwriter": false,
