@@ -38,7 +38,7 @@ let movieData = [
   {    
     "title": "Chains of Redemtion",
     "description": "",
-    "img": "",
+    "img": "https://www.imdb.com/title/tt13179262/mediaviewer/rm2924285185/?ref_=tt_ov_i",
     "alt-txt": "",
     "production":"",
     "role": {
@@ -229,7 +229,11 @@ let populate = (category) => {
       divCol4.setAttribute("class","col-md-4");
 
       let poster = document.createElement("img");
-      poster.setAttribute("src","./assets/images/"+film["img"]);
+      if(film["img"].include("http")) {
+	poster.setAttribute("src",film["img"]);
+      } else {
+	poster.setAttribute("src","./assets/images/"+film["img"]);
+      }
       poster.setAttribute("alt",film["alt-txt"]);
       poster.setAttribute("class","img-fluid rounded-start m-3 rounded");
       poster.setAttribute("height","250");

@@ -1,60 +1,211 @@
-{
-  "title": "Hello Regina",
-  "description": "MOvie descirpiton movie description moceisdkhgnlskfugndlkhgblkdjhbnlkfdgbhnldfkjgbhlkdfunhdufuhndlfkuhnbdlfuhbdlkfhnjbdlfkhnbldkfhx",
-  "img": "HeyRegina.JPG",
-  "alt-txt": "image split in half with a woman smiling in the top section and a woamn wiht glowing eyes on the bottom",
-  "role": {
-    "first-ad": true,
-    "director": false,
-    "screenwriter": false,
-    "set-design": false,
-    "producer": true
-  },
-  "awards":
+let movieData = [
   {
-    "best-pic": false,
-    "best-sfx": false,
-    "best-sound": false,
-    "honorable": true
+    "title": "Hello Regina",
+    "description": "MOvie descirpiton movie description moceisdkhgnlskfugndlkhgblkdjhbnlkfdgbhnldfkjgbhlkdfunhdufuhndlfkuhnbdlfuhbdlkfhnjbdlfkhnbldkfhx",
+    "img": "HeyRegina.JPG",
+    "alt-txt": "image split in half with a woman smiling in the top section and a woamn wiht glowing eyes on the bottom",
+    "production":"Ern Gereado",
+    "role": {
+      "director": false,
+      "ad": true,
+      "set-design": false,
+      "producer": true,
+      "screenwriter": false,
+      "cinematographer": false
+    },
+    "awards":[
+      "Honorable-Mention - Another Internaitonal Film",
+      "NBest original Score - Symbiotic Film Festival"
+    ]
   },
-  
-  "title": "Hello Regina 00000000000000000000000000",
-  "description": "MOvie descirpiton movie description moceisdkhgnlskfugndlkhgblkdjhbnlkfdgbhnldfkjgbhlkdfunhdufuhndlfkuhnbdlfuhbdlkfhnjbdlfkhnbldkfhx",
-  "img": "HeyRegina.JPG",
-  "alt-txt": "image split in half with a woman smiling in the top section and a woamn wiht glowing eyes on the bottom",
-  "role": {
-    "first-ad": true,
-    "director": false,
-    "screenwriter": true,
-    "set-design": false,
-    "producer": true
+  {    
+    "title": "Mad Mad World",
+    "description": "",
+    "img": "",
+    "alt-txt": "Man backlit with a pistol in one hand and a moltov cocktail in the other.",
+    "production":"Midnight Ramblings",
+    "role": {
+      "director": true,
+      "ad": false,
+      "set-design": false,
+      "producer": true,
+      "screenwriter": true,
+      "cinematographer": false
+    },
+    "awards":[
+    ]
   },
-  "awards":
-  {
-    "best-pic": false,
-    "best-sfx": true,
-    "best-sound": false,
-    "honorable": true
+  {    
+    "title": "Chains of Redemtion",
+    "description": "",
+    "img": "",
+    "alt-txt": "",
+    "production":"",
+    "role": {
+      "director": false,
+      "ad": true,
+      "set-design": false,
+      "producer": false,
+      "screenwriter": false,
+      "cinematographer": false
+    },
+    "awards":[
+    ]
   },
-  
-  "title": "Hello Regina 2222222",
-  "description": "MOvie descirpiton movie description moceisdkhgnlskfugndlkhgblkdjhbnlkfdgbhnldfkjgbhlkdfunhdufuhndlfkuhnbdlfuhbdlkfhnjbdlfkhnbldkfhx",
-  "img": "HeyRegina.JPG",
-  "alt-txt": "image split in half with a woman smiling in the top section and a woamn wiht glowing eyes on the bottom",
-  "role": {
-    "first-ad": true,
-    "director": false,
-    "screenwriter": false,
-    "set-design": false,
-    "producer": true
+  {    
+    "title": "Recognition",
+    "description": "",
+    "img": "",
+    "alt-txt": "",
+    "production":"",
+    "role": {
+      "director": false,
+      "ad": false,
+      "set-design": false,
+      "producer": false,
+      "screenwriter": false,
+      "cinematographer": true
+    },
+    "awards":[
+    ]
   },
-  "awards":
-  {
-    "best-pic": false,
-    "best-sfx": false,
-    "best-sound": false,
-    "honorable": true
+  {    
+    "title": "Spark & Flame",
+    "description": "",
+    "img": "",
+    "alt-txt": "",
+    "production":"",
+    "role": {
+      "director": false,
+      "ad": true,
+      "set-design": false,
+      "producer": false,
+      "screenwriter": false,
+      "cinematographer": false
+    },
+    "awards":[
+    ]
+  },
+  {    
+    "title": "If Wishes Were Fishes",
+    "description": "",
+    "img": "",
+    "alt-txt": "",
+    "production":"",
+    "role": {
+      "director": false,
+      "ad": true,
+      "set-design": false,
+      "producer": false,
+      "screenwriter": false,
+      "cinematographer": false
+    },
+    "awards":[
+      "48Hour Summer FilmiFestival - Best Film"
+    ]
+  },
+  {    
+    "title": "O'Holes",
+    "description": "",
+    "img": "",
+    "alt-txt": "",
+    "production":"",
+    "role": {
+      "director": false,
+      "ad": true,
+      "set-design": false,
+      "producer": false,
+      "screenwriter": false,
+      "cinematographer": false
+    },
+    "awards":[
+    ]
+  },
+  {    
+    "title": "Seeing Is Believing",
+    "description": "",
+    "img": "",
+    "alt-txt": "",
+    "production":"Steve Herigina",
+    "role": {
+      "director": true,
+      "ad": false,
+      "set-design": false,
+      "producer": false,
+      "screenwriter": false,
+      "cinematographer": false
+    },
+    "awards":[
+    ]
+  },
+  {    
+    "title": "Moan & Groan",
+    "description": "",
+    "img": "",
+    "alt-txt": "",
+    "production":"",
+    "role": {
+      "director": true,
+      "ad": false,
+      "set-design": false,
+      "producer": false,
+      "screenwriter": false,
+      "cinematographer": false
+    },
+    "awards":[
+    ]
+  },
+  {    
+    "title": "The Gibbering",
+    "description": "",
+    "img": "",
+    "alt-txt": "",
+    "production":"Midnight Rambelings, Jake Cole Films, and Scott Brosius",
+    "role": {
+      "director": true,
+      "ad": false,
+      "set-design": false,
+      "producer": false,
+      "screenwriter": true,
+      "cinematographer": false
+    },
+    "awards":[
+    ]
+  },
+  {    
+    "title": "Hellow Night Owls",
+    "description": "",
+    "img": "",
+    "alt-txt": "",
+    "production":"Jake Cole Films",
+    "role": {
+      "director": false,
+      "ad": true,
+      "set-design": false,
+      "producer": false,
+      "screenwriter": false,
+      "cinematographer": false
+    },
+    "awards":[
+    ]
+  },
+  {    
+    "title": "Chains of Burden",
+    "description": "",
+    "img": "",
+    "alt-txt": "",
+    "production":"White Midnihght Films",
+    "role": {
+      "director": false,
+      "ad": true,
+      "set-design": false,
+      "producer": false,
+      "screenwriter": false,
+      "cinematographer": false
+    },
+    "awards":[
+      "48Hour Summer Film Festival - Best Film"
+    ]
   }
+];
 
-}		
-  
