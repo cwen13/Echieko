@@ -4,12 +4,12 @@ let movieData = [
     "description": "MOvie descirpiton movie description moceisdkhgnlskfugndlkhgblkdjhbnlkfdgbhnldfkjgbhlkdfunhdufuhndlfkuhnbdlfuhbdlkfhnjbdlfkhnbldkfhx",
     "img": "HeyRegina.JPG",
     "alt-txt": "image split in half with a woman smiling in the top section and a woamn wiht glowing eyes on the bottom",
-    "production":"White Midnight",
+    "production":"Ern Gereado",
     "role": {
       "director": false,
       "ad": true,
       "set-design": false,
-      "producer": false,
+      "producer": true,
       "screenwriter": false,
       "cinematographer": false
     },
@@ -28,8 +28,8 @@ let movieData = [
       "director": true,
       "ad": false,
       "set-design": false,
-      "producer": false,
-      "screenwriter": false,
+      "producer": true,
+      "screenwriter": true,
       "cinematographer": false
     },
     "awards":[
@@ -38,7 +38,7 @@ let movieData = [
   {    
     "title": "Chains of Redemtion",
     "description": "",
-    "img": "",
+    "img": "https://www.imdb.com/title/tt13179262/mediaviewer/rm2924285185/?ref_=tt_ov_i",
     "alt-txt": "",
     "production":"",
     "role": {
@@ -59,7 +59,7 @@ let movieData = [
     "alt-txt": "",
     "production":"",
     "role": {
-      "director": true,
+      "director": false,
       "ad": false,
       "set-design": false,
       "producer": false,
@@ -101,6 +101,7 @@ let movieData = [
       "cinematographer": false
     },
     "awards":[
+      "48Hour Summer FilmiFestival - Best Film"
     ]
   },
   {    
@@ -110,8 +111,8 @@ let movieData = [
     "alt-txt": "",
     "production":"",
     "role": {
-      "director": true,
-      "ad": false,
+      "director": false,
+      "ad": true,
       "set-design": false,
       "producer": false,
       "screenwriter": false,
@@ -125,7 +126,7 @@ let movieData = [
     "description": "",
     "img": "",
     "alt-txt": "",
-    "production":"",
+    "production":"Steve Herigina",
     "role": {
       "director": true,
       "ad": false,
@@ -203,6 +204,7 @@ let movieData = [
       "cinematographer": false
     },
     "awards":[
+      "48Hour Summer Film Festival - Best Film"
     ]
   }
 ];
@@ -227,7 +229,11 @@ let populate = (category) => {
       divCol4.setAttribute("class","col-md-4");
 
       let poster = document.createElement("img");
-      poster.setAttribute("src","./assets/images/"+film["img"]);
+      if(film["img"].include("http")) {
+	poster.setAttribute("src",film["img"]);
+      } else {
+	poster.setAttribute("src","./assets/images/"+film["img"]);
+      }
       poster.setAttribute("alt",film["alt-txt"]);
       poster.setAttribute("class","img-fluid rounded-start m-3 rounded");
       poster.setAttribute("height","250");
@@ -270,6 +276,7 @@ let populate = (category) => {
       divCardBody.append(title);
       divCardBody.append(desc);
       divCardBody.append(production);
+      console.log(awards);
       if (awards) divCardBody.append(awards);
       divCol8.append(divCardBody);
       
@@ -285,7 +292,7 @@ let populate = (category) => {
       continue;
     }
   }
-  console.log(cards);
+//  console.log(cards);
   return cards;
 }
 
@@ -308,6 +315,9 @@ function main() {
     let tab = document.querySelector("#v-pills-"+cats[i]);
     // build card
     let cards = populate(cats[i]);
+    console.log("CAT:",cats[i]);
+    console.log("CARDS:",cards);
+    
     cards.forEach((card) =>tab.append(card));
   }
     
