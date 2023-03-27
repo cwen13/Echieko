@@ -1,7 +1,7 @@
 let movieData = [
   {
     "title": "Hello Regina",
-    "description": "MOvie descirpiton movie description moceisdkhgnlskfugndlkhgblkdjhbnlkfdgbhnldfkjgbhlkdfunhdufuhndlfkuhnbdlfuhbdlkfhnjbdlfkhnbldkfhx",
+    "description": "1st Assitance Director",
     "img": "HeyRegina.jpg",
     "alt-txt": "image split in half with a woman smiling in the top section and a woamn wiht glowing eyes on the bottom",
     "production":"Ern Gereado",
@@ -33,6 +33,7 @@ let movieData = [
       "cinematographer": false
     },
     "awards":[
+      "Winner best sfx - Funmill film festival"
     ]
   },
   {    
@@ -106,7 +107,7 @@ let movieData = [
   },
   {    
     "title": "O'Holes",
-    "description": "",
+    "description": "2nd Assistan director and set design",
     "img": "OHoles.jpg",
     "alt-txt": "",
     "production":"",
@@ -123,7 +124,7 @@ let movieData = [
   },
   {    
     "title": "Seeing Is Believing",
-    "description": "",
+    "description": "Wrrote and directed",
     "img": "",
     "alt-txt": "",
     "production":"Steve Herigina",
@@ -132,7 +133,7 @@ let movieData = [
       "ad": false,
       "set-design": false,
       "producer": false,
-      "screenwriter": false,
+      "screenwriter": true,
       "cinematographer": false
     },
     "awards":[
@@ -140,7 +141,7 @@ let movieData = [
   },
   {    
     "title": "Moan & Groan",
-    "description": "",
+    "description": "Co-director",
     "img": "",
     "alt-txt": "",
     "production":"",
@@ -157,7 +158,7 @@ let movieData = [
   },
   {    
     "title": "The Gibbering",
-    "description": "",
+    "description": "Produced and wrote",
     "img": "",
     "alt-txt": "",
     "production":"Midnight Rambelings, Jake Cole Films, and Scott Brosius",
@@ -165,7 +166,7 @@ let movieData = [
       "director": true,
       "ad": false,
       "set-design": false,
-      "producer": false,
+      "producer": true,
       "screenwriter": true,
       "cinematographer": false
     },
@@ -310,7 +311,9 @@ function main() {
     
     cards.forEach((card) =>tab.append(card));
   }
-    
+
+  populteOrgs();
+  
   return 0;
 }
 
