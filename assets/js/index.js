@@ -222,7 +222,6 @@ const movieData = [
       "cinematographer": false
     },
     "awards":[
-      "48Hour Summer Film Festival - Best Film"
     ]
   }
   
@@ -319,9 +318,9 @@ let populateMovies = (category) => {
       card.append(divG);
 
       cards.push(card);
-    } else {
-      continue;
     }
+
+    awards = [];
   }
 //  console.log(cards);
   return cards;
