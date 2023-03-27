@@ -1,8 +1,8 @@
 let movieData = [
   {
     "title": "Hello Regina",
-    "description": "MOvie descirpiton movie description moceisdkhgnlskfugndlkhgblkdjhbnlkfdgbhnldfkjgbhlkdfunhdufuhndlfkuhnbdlfuhbdlkfhnjbdlfkhnbldkfhx",
-    "img": "HeyRegina.JPG",
+    "description": "1st Assitance Director",
+    "img": "HeyRegina.jpg",
     "alt-txt": "image split in half with a woman smiling in the top section and a woamn wiht glowing eyes on the bottom",
     "production":"Ern Gereado",
     "role": {
@@ -21,7 +21,7 @@ let movieData = [
   {    
     "title": "Mad Mad World",
     "description": "",
-    "img": "",
+    "img": "MadMadWorld.jpg",
     "alt-txt": "Man backlit with a pistol in one hand and a moltov cocktail in the other.",
     "production":"Midnight Ramblings",
     "role": {
@@ -33,12 +33,13 @@ let movieData = [
       "cinematographer": false
     },
     "awards":[
+      "Winner best sfx - Funmill film festival"
     ]
   },
   {    
     "title": "Chains of Redemtion",
     "description": "",
-    "img": "https://www.imdb.com/title/tt13179262/mediaviewer/rm2924285185/?ref_=tt_ov_i",
+    "img": "ChainsOfRedemtion.jpg",
     "alt-txt": "",
     "production":"",
     "role": {
@@ -55,7 +56,7 @@ let movieData = [
   {    
     "title": "Recognition",
     "description": "",
-    "img": "",
+    "img": "Recognition.jpg",
     "alt-txt": "",
     "production":"",
     "role": {
@@ -70,9 +71,9 @@ let movieData = [
     ]
   },
   {    
-    "title": "Spark & Flame",
+    "title": "Sparks & Flame",
     "description": "",
-    "img": "",
+    "img": "Sparks&Flame.jpg",
     "alt-txt": "",
     "production":"",
     "role": {
@@ -89,7 +90,7 @@ let movieData = [
   {    
     "title": "If Wishes Were Fishes",
     "description": "",
-    "img": "",
+    "img": "IfWishes.jpg",
     "alt-txt": "",
     "production":"",
     "role": {
@@ -106,8 +107,8 @@ let movieData = [
   },
   {    
     "title": "O'Holes",
-    "description": "",
-    "img": "",
+    "description": "2nd Assistan director and set design",
+    "img": "OHoles.jpg",
     "alt-txt": "",
     "production":"",
     "role": {
@@ -123,7 +124,7 @@ let movieData = [
   },
   {    
     "title": "Seeing Is Believing",
-    "description": "",
+    "description": "Wrrote and directed",
     "img": "",
     "alt-txt": "",
     "production":"Steve Herigina",
@@ -132,7 +133,7 @@ let movieData = [
       "ad": false,
       "set-design": false,
       "producer": false,
-      "screenwriter": false,
+      "screenwriter": true,
       "cinematographer": false
     },
     "awards":[
@@ -140,7 +141,7 @@ let movieData = [
   },
   {    
     "title": "Moan & Groan",
-    "description": "",
+    "description": "Co-director",
     "img": "",
     "alt-txt": "",
     "production":"",
@@ -157,7 +158,7 @@ let movieData = [
   },
   {    
     "title": "The Gibbering",
-    "description": "",
+    "description": "Produced and wrote",
     "img": "",
     "alt-txt": "",
     "production":"Midnight Rambelings, Jake Cole Films, and Scott Brosius",
@@ -165,7 +166,7 @@ let movieData = [
       "director": true,
       "ad": false,
       "set-design": false,
-      "producer": false,
+      "producer": true,
       "screenwriter": true,
       "cinematographer": false
     },
@@ -175,7 +176,7 @@ let movieData = [
   {    
     "title": "Hellow Night Owls",
     "description": "",
-    "img": "",
+    "img": "HelloNightOwls.jpg",
     "alt-txt": "",
     "production":"Jake Cole Films",
     "role": {
@@ -229,11 +230,7 @@ let populate = (category) => {
       divCol4.setAttribute("class","col-md-4");
 
       let poster = document.createElement("img");
-      if(film["img"].include("http")) {
-	poster.setAttribute("src",film["img"]);
-      } else {
-	poster.setAttribute("src","./assets/images/"+film["img"]);
-      }
+      poster.setAttribute("src","./assets/images/movies/"+film["img"]);
       poster.setAttribute("alt",film["alt-txt"]);
       poster.setAttribute("class","img-fluid rounded-start m-3 rounded");
       poster.setAttribute("height","250");
@@ -276,7 +273,6 @@ let populate = (category) => {
       divCardBody.append(title);
       divCardBody.append(desc);
       divCardBody.append(production);
-      console.log(awards);
       if (awards) divCardBody.append(awards);
       divCol8.append(divCardBody);
       
@@ -305,22 +301,19 @@ function main() {
   // get the block categories
   let categories = document.querySelector("#v-pills-tab");
   categories = categories.querySelectorAll("button");
-//  console.log(categories);
   let cats = [];
   categories.forEach((cat) => cats.push(cat.innerText.trim().toLowerCase()));
-  console.log(cats);
   // cycle through categories
   for (let i=0; i<cats.length; i++) {
-    console.log(cats[i]);
     let tab = document.querySelector("#v-pills-"+cats[i]);
     // build card
     let cards = populate(cats[i]);
-    console.log("CAT:",cats[i]);
-    console.log("CARDS:",cards);
     
     cards.forEach((card) =>tab.append(card));
   }
-    
+
+  populteOrgs();
+  
   return 0;
 }
 
