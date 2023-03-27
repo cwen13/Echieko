@@ -1,4 +1,4 @@
-let movieData = [
+const movieData = [
   {
     "title": "Hello Regina",
     "description": "1st Assitance Director",
@@ -125,7 +125,7 @@ let movieData = [
   {    
     "title": "Seeing Is Believing",
     "description": "Wrrote and directed",
-    "img": "",
+    "img": "placeHolder.png",
     "alt-txt": "",
     "production":"Steve Herigina",
     "role": {
@@ -142,7 +142,7 @@ let movieData = [
   {    
     "title": "Moan & Groan",
     "description": "Co-director",
-    "img": "",
+    "img": "placeHolder.png",
     "alt-txt": "",
     "production":"",
     "role": {
@@ -159,7 +159,7 @@ let movieData = [
   {    
     "title": "The Gibbering",
     "description": "Produced and wrote",
-    "img": "",
+    "img": "placeHolder.png",
     "alt-txt": "",
     "production":"Midnight Rambelings, Jake Cole Films, and Scott Brosius",
     "role": {
@@ -192,8 +192,8 @@ let movieData = [
   },
   {    
     "title": "Chains of Burden",
-    "description": "",
-    "img": "",
+    "description": "First AD",
+    "img": "placeHolder.png",
     "alt-txt": "",
     "production":"White Midnihght Films",
     "role": {
@@ -205,15 +205,50 @@ let movieData = [
       "cinematographer": false
     },
     "awards":[
+    ]
+  },
+  {    
+    "title": "Bite Size Halloween: Rebecca",
+    "description": "",
+    "img": "BiteSizeHalloween-Rebecca.png",
+    "alt-txt": "",
+    "production":"20th Digital Studios",
+    "role": {
+      "director": false,
+      "ad": false,
+      "set-design": true,
+      "producer": false,
+      "screenwriter": false,
+      "cinematographer": false
+    },
+    "awards":[
       "48Hour Summer Film Festival - Best Film"
     ]
+  }
+  
+];
+
+const orgData = [
+  {
+    "name": "Women in Film Ohio",
+    "position": "Director of Special Events",
+    "img": "WIFTO.jpg"
+  },
+  {
+    "name": "CleWood Films",
+    "position":"Social Media Manager",
+    "img":"CleWoodFilm.png"
+  },
+  {
+    "name":"Jake Cole Films",
+    "position":"Social Media Manager",
+    "img":"JakeColeFilms.png"
   }
 ];
 
 
 
-
-let populate = (category) => {
+let populateMovies = (category) => {
   let cards = [];
   for(let i=0; i<movieData.length; i++) {
     let film = movieData[i];
@@ -292,10 +327,62 @@ let populate = (category) => {
   return cards;
 }
 
-let buildAwards = (awards) => {
+let populateOrgs = () => {
+  let cards = [];
+  for(let i=0; i<orgData.length; i++) {
+    let org = orgData[i];
+    
+    let card = document.createElement("section");
+    card.setAttribute("class","card mb-3 bg-danger");
+    
+    let divG = document.createElement("div");
+    divG.setAttribute("class", "row g-0");
+    
+    let divCol4 = document.createElement("div");
+    divCol4.setAttribute("class","col-md-4");
+    
+    let poster = document.createElement("img");
+    poster.setAttribute("src","./assets/images/orgs/"+org["img"]);
+    poster.setAttribute("alt",org["alt-txt"]);
+    poster.setAttribute("class","img-fluid rounded-start m-3 rounded");
+    poster.setAttribute("height","250");
+    poster.setAttribute("width","250");
+    
+    let divCol8 = document.createElement("div");
+    divCol8.setAttribute("class","col-md-8");
+    
+    let divCardBody = document.createElement("div");
+    divCardBody.setAttribute("class", "card-body continer-fluid");
+    
+    
+    let organization = document.createElement("h5");
+    organization.setAttribute("class", "card-title");
+    organization.innerHTML = org["name"];
+    
+    let position = document.createElement("p");
+    position.setAttribute("class","card-text");
+    position.innerHTML = org["position"];
+    
+    
+    //image column
+    divCol4.append(poster);
+    
+    //text column
+    divCardBody.append(organization);
+    divCardBody.append(position);
+    divCol8.append(divCardBody);
+    
+    
+    // merging columns
+    divG.append(divCol4);
+    divG.append(divCol8);
+    card.append(divG);
+    
+    cards.push(card);
+  }
   
-}  
-
+  return cards; 
+}
 
 function main() {
   // get the block categories
@@ -305,14 +392,21 @@ function main() {
   categories.forEach((cat) => cats.push(cat.innerText.trim().toLowerCase()));
   // cycle through categories
   for (let i=0; i<cats.length; i++) {
+    if (cats[i] == "organization") {
+      let orgCards = populateOrgs();
+      orgCards.forEach((card) => document.querySelector("#v-pills-"+cats[i])
+		       .append(card));
+      console.log(orgCards);
+      
+      continue;
+    }
     let tab = document.querySelector("#v-pills-"+cats[i]);
     // build card
-    let cards = populate(cats[i]);
+    let cards = populateMovies(cats[i]);
     
-    cards.forEach((card) =>tab.append(card));
+    cards.forEach((card) => tab.append(card));
   }
 
-  populteOrgs();
   
   return 0;
 }
